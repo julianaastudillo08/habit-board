@@ -1,0 +1,82 @@
+:root {
+  --bg: #f6f1e8;
+  --ink: #1c1915;
+  --line: rgba(28, 25, 21, 0.12);
+  --accent: #0f6e56;
+  --ok: #2a9d6a;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: "DM Sans", system-ui, sans-serif;
+  background:
+    linear-gradient(180deg, #efe7d8 0%, var(--bg) 40%, #e7eee9 100%);
+  color: var(--ink);
+  min-height: 100vh;
+  padding: 2rem 1rem 3rem;
+}
+.page { width: min(820px, 100%); margin: 0 auto; }
+.kicker {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--accent);
+}
+h1 {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  letter-spacing: -0.02em;
+  margin-top: 0.25rem;
+}
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: end;
+  margin-bottom: 1.5rem;
+}
+#addForm { display: flex; gap: 0.4rem; }
+input {
+  border: 1px solid var(--line);
+  background: #fff;
+  padding: 0.65rem 0.75rem;
+  font: inherit;
+  min-width: 180px;
+}
+button {
+  font: inherit;
+  font-weight: 700;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 0.65rem 0.9rem;
+  cursor: pointer;
+}
+button:hover { filter: brightness(1.05); }
+.board-wrap { overflow-x: auto; background: #fff; border: 1px solid var(--line); }
+.board { width: 100%; border-collapse: collapse; min-width: 560px; }
+th, td {
+  border-bottom: 1px solid var(--line);
+  padding: 0.7rem 0.55rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+th:first-child, td:first-child { text-align: left; padding-left: 1rem; }
+th { font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: #6a6358; }
+.cell {
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid var(--line);
+  background: #faf7f2;
+  cursor: pointer;
+  margin: 0 auto;
+}
+.cell.on { background: var(--ok); border-color: var(--ok); }
+.del {
+  background: transparent;
+  color: #8a7f70;
+  padding: 0.3rem 0.5rem;
+  font-size: 0.8rem;
+}
+.hint { margin-top: 0.9rem; font-size: 0.85rem; color: #6a6358; }
